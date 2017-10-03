@@ -34,9 +34,10 @@
 #'   chr22_processed = seq_gtf(gtf_dataframe, chr22seq)
 #'}
 seq_gtf = function(gtf, seqs, feature='transcript', exononly=TRUE, 
-    idfield='transcript_id', attrsep="; "){
+    idfield='transcript_id', attrsep="; ", ...){
 
     feature = match.arg(feature, c('transcript', 'exon'))
+    extras = list(...)
 
     gtfClasses = c("character", "character", "character", "integer", 
         "integer", "character", "character", "character", "character")
